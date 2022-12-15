@@ -17,7 +17,7 @@ from orders.models import (
 )
 
 
-class CartItemsSerializer(ModelSerializer):
+class CartItemsSerializer(ModelSerializer): # changes are made
     class Meta:
         model = CartItems
         fields = "__all__"
