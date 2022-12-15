@@ -14,18 +14,17 @@ from rest_framework.response import Response
 
 from orders.models import CartItems
 
-
 from products.models import (
-                            Brand,
-                            Products,
-                            ProductCategory,
-                            Discount,
-                            ProductStock,
-                            ProductOptions,
-                            Slider,
-                            ProductImages,
-                            ProductReviews,
-                            Combos
+    Brand,
+    Products,
+    ProductCategory,
+    Discount,
+    ProductStock,
+    ProductOptions,
+    Slider,
+    ProductImages,
+    ProductReviews,
+    Combos
 )
 
 from .serializers import (ProductsSerializer,
@@ -38,6 +37,7 @@ from .serializers import (ProductsSerializer,
                           ProductImagesSerializer,
                           ProductReviewsSerializer,
                           CombosSerializer)
+
 
 class ProductsViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
@@ -78,7 +78,6 @@ class DiscountViewSet(viewsets.ModelViewSet):
     serializer_class = DiscountSerializer
 
 
-
 class ProductStockViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = ProductStock.objects.all()
@@ -89,7 +88,6 @@ class ProductOptionsViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = ProductOptions.objects.all()
     serializer_class = ProductOptionsSerializer
-
 
 
 class BrandViewSet(viewsets.ModelViewSet):
@@ -117,9 +115,7 @@ class ProductReviewsViewSet(viewsets.ModelViewSet):
     serializer_class = ProductReviewsSerializer
 
 
-
 class CombosViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly]  # permissions are done by me
     queryset = Combos.objects.all()
     serializer_class = CombosSerializer
-
