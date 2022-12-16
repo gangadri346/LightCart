@@ -116,6 +116,6 @@ class ProductReviewsViewSet(viewsets.ModelViewSet):
 
 
 class CombosViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]  # permissions are done by me
+    permission_classes = [IsAuthenticatedOrReadOnly]  # permissions are done by me gangadri
     queryset = Combos.objects.all()
     serializer_class = CombosSerializer
