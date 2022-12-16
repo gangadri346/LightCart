@@ -51,9 +51,7 @@ class ProductsViewSet(viewsets.ModelViewSet):
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-    # def list(self, request, *args, **kwargs):
-    #     serializer = self.get_serializer(self.get_queryset(), many=True)
-    #     return self.get_paginated_response(self.paginate_queryset(serializer.data))
+"****************************************************************************************************"
 
     def retrieve(self, request, *args, **kwargs):
         item = self.get_object()
@@ -116,6 +114,6 @@ class ProductReviewsViewSet(viewsets.ModelViewSet):
 
 
 class CombosViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]  # permissions are done by me gangadri
+    permission_classes = [IsAuthenticatedOrReadOnly]  # permissions are done by me 
     queryset = Combos.objects.all()
     serializer_class = CombosSerializer
